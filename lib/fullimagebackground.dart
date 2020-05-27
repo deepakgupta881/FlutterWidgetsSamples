@@ -26,7 +26,8 @@ class ShowFullImageSample extends StatelessWidget {
       body: Container(
           decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/back.jpg"), fit: BoxFit.cover),
+            image: AssetImage("assets/back.jpg"), fit: BoxFit.fitHeight),
+//              image: NetworkImage("https://i.picsum.photos/id/235/200/300.jpg"), fit: BoxFit.cover),
       )),
     );
   }
