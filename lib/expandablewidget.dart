@@ -40,14 +40,12 @@ class ExpandableWidget extends StatelessWidget {
               fit: FlexFit.tight,
               child: Container(
                 width: double.infinity,
-                height: 600,
                 color: Colors.blue,
                 child: Text("column with 600 height - Main Axis Vertical"),
               )),
           Expanded(
               child: Container(
             width: double.infinity,
-            height: 600,
             color: Colors.grey,
             child: Text("column with 600 height - Main Axis Vertical"),
           ))
