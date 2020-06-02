@@ -3,7 +3,7 @@ import 'package:google_sample/provider/CartModel.dart';
 import 'package:provider/provider.dart';
 
 class ProductList extends StatelessWidget {
-  final products = List<String>.generate(20, (index) {
+  final products = List<String>.generate(21, (index) {
     return "Product no. $index";
   });
 
@@ -50,7 +50,10 @@ class ProductList extends StatelessWidget {
             ),
           );
         },
-        separatorBuilder: (context, index) => Divider(),
+        separatorBuilder: (context, index) => Divider(
+              color: Colors.blue,
+              thickness: 1,
+            ),
         itemCount: products.length);
   }
 }

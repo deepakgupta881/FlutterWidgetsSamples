@@ -1,10 +1,17 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 
 class CartModel extends ChangeNotifier {
-  List<String> _selectedProducts = [];
+  Set<String> _selectedProducts = new HashSet();
 
   void add(String value) {
     _selectedProducts.add(value);
+    /*Set<String> s = HashSet<String>();
+    s.addAll(_selectedProducts);
+    _selectedProducts = [];
+    _selectedProducts.addAll(s);*/
+    print(selectedProducts);
     notifyListeners();
   }
 
@@ -13,5 +20,5 @@ class CartModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<String> get selectedProducts => _selectedProducts;
+  HashSet<String> get selectedProducts => _selectedProducts;
 }

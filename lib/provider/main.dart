@@ -7,7 +7,7 @@ import 'Cart.dart';
 
 void main() => runApp(
       ChangeNotifierProvider<CartModel>(
-        child: MaterialApp(home: MyApp()),
+        child: MaterialApp(home: MyApp(),debugShowCheckedModeBanner: false,),
         create: (context) => CartModel(),
       ),
     );

@@ -7,6 +7,7 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Cart",
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -27,7 +28,13 @@ class Cart extends StatelessWidget {
             Center(
               child: Container(
                 padding: EdgeInsets.all(8),
-                child: Text("Cart Items"),
+                child: Text(
+                  "Long press to delete the cart item",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.blue),
+                ),
               ),
             ),
             Consumer<CartModel>(
@@ -36,12 +43,22 @@ class Cart extends StatelessWidget {
                   child: ListView.separated(
                       itemBuilder: (context, index) {
                         return ListTile(
-                            onTap: () {
-                              value.remove(value.selectedProducts[index]);
+                            onLongPress: () {
+                              value.remove(
+                                  value.selectedProducts.toList()[index]);
                             },
-                            title: Text(value.selectedProducts[index]));
+                            title: Text(
+                              value.selectedProducts.toList()[index],
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Colors.black),
+                            ));
                       },
-                      separatorBuilder: (context, index) => Divider(),
+                      separatorBuilder: (context, index) => Divider(
+                            color: Colors.red,
+                            thickness: 1,
+                          ),
                       itemCount: value.selectedProducts.length),
                 );
               },
