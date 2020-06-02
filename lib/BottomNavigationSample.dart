@@ -14,6 +14,8 @@ class MyApp extends StatefulWidget {
 
 class BottomNavigationBarSample extends State<MyApp> {
   int _current = 0;
+
+  // widgets
   final tabs = [
     Center(child: Text("Home")),
     Center(child: Text("Search")),
