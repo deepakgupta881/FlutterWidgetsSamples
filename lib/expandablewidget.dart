@@ -25,6 +25,7 @@ class ExpandableWidget extends StatelessWidget {
         title: Text("Expandable Sample"),
         centerTitle: true,
       ),
+      drawer: Drawer(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
